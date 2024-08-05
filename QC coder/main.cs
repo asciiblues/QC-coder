@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QRCoder;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,29 +30,21 @@ namespace QC_coder
 
         private void main_Load(object sender, EventArgs e)
         {
-            richTextBox1.Hide();
-            label1.Hide();
-            label2.Hide();
-            pictureBox1.Hide();pictureBox2.
-                Hide();
+            
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            richTextBox1.Show();
-            label1.Show();
-            label2.Show();
-            pictureBox1.Show(); pictureBox2.
-                Show();
-        }
+            Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+            pictureBox2.Image = barcode.Draw(richTextBox1.Text, 20);
+       }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            richTextBox1.Show();
-            label1.Show();
-            label2.Show();
-            pictureBox1.Show(); pictureBox2.
-                Show();
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(richTextBox1.Text, QRCodeGenerator.ECCLevel.H);
+            QRCode qrCode = new QRCode(qrCodeData);
+            pictureBox1.Image = qrCode.GetGraphic(20);
         }
     }
 }
