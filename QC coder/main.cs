@@ -258,46 +258,37 @@ namespace QC_coder
 
                 PdfDocument doc = new PdfDocument();
                 //Set the margins
-                doc.PageSettings.SetMargins(15);
-                //Add a page
-                PdfPageBase page = doc.Pages.Add();
+                doc.PageSettings.SetMargins(0);
                 //Load an Image
                 Image image = pictureBox2.Image;
+
                 //Get the image width and height
-                float width = image.PhysicalDimension.Width;
-                float height = image.PhysicalDimension.Height;
-                //Declare a PdfImage variable
-                PdfImage pdfImage;
-                //If the image width is larger than page width
-
-                if (width > page.Canvas.ClientSize.Width)
-
-                {
-
-                    //Resize the image to make it to fit to the page width
-
-                    float widthFitRate = width / page.Canvas.ClientSize.Width;
-
-                    Size size = new Size((int)(width / widthFitRate), (int)(height / widthFitRate));
-
-                    Bitmap scaledImage = new Bitmap(image, size);
+                
+            float width = image.PhysicalDimension.Width;
+                
+            float height = image.PhysicalDimension.Height;
 
 
 
 
-                    //Load the scaled image to the PdfImage object
+                //Add a page of the same size as the image
 
-                    pdfImage = PdfImage.FromImage(scaledImage);
+                PdfPageBase page = doc.Pages.Add(new SizeF(width, height));
 
-                }
-                else
 
-                {
-                    //Load the original image to the PdfImage object
-                    pdfImage = PdfImage.FromImage(image);
-                }
-                //Draw image at (0, 0)
-                page.Canvas.DrawImage(pdfImage, 0, 0, pdfImage.Width, pdfImage.Height);
+
+
+
+                //Create a PdfImage object based on the image
+
+                PdfImage pdfImage = PdfImage.FromImage(image);
+                
+
+
+
+            //Draw image at (0, 0) of the page
+            page.Canvas.DrawImage(pdfImage, 0, 0, pdfImage.Width, pdfImage.Height);
+
                 //Save to PDF
                 doc.SaveToFile(saveFileDialog9.FileName);
             }
@@ -317,46 +308,37 @@ namespace QC_coder
 
                 PdfDocument doc = new PdfDocument();
                 //Set the margins
-                doc.PageSettings.SetMargins(15);
-                //Add a page
-                PdfPageBase page = doc.Pages.Add();
+                doc.PageSettings.SetMargins(0);
                 //Load an Image
                 Image image = pictureBox1.Image;
+
                 //Get the image width and height
+
                 float width = image.PhysicalDimension.Width;
+
                 float height = image.PhysicalDimension.Height;
-                //Declare a PdfImage variable
-                PdfImage pdfImage;
-                //If the image width is larger than page width
-
-                if (width > page.Canvas.ClientSize.Width)
-
-                {
-
-                    //Resize the image to make it to fit to the page width
-
-                    float widthFitRate = width / page.Canvas.ClientSize.Width;
-
-                    Size size = new Size((int)(width / widthFitRate), (int)(height / widthFitRate));
-
-                    Bitmap scaledImage = new Bitmap(image, size);
 
 
 
 
-                    //Load the scaled image to the PdfImage object
+                //Add a page of the same size as the image
 
-                    pdfImage = PdfImage.FromImage(scaledImage);
+                PdfPageBase page = doc.Pages.Add(new SizeF(width, height));
 
-                }
-                else
 
-                {
-                    //Load the original image to the PdfImage object
-                    pdfImage = PdfImage.FromImage(image);
-                }
-                //Draw image at (0, 0)
+
+
+
+                //Create a PdfImage object based on the image
+
+                PdfImage pdfImage = PdfImage.FromImage(image);
+
+
+
+
+                //Draw image at (0, 0) of the page
                 page.Canvas.DrawImage(pdfImage, 0, 0, pdfImage.Width, pdfImage.Height);
+
                 //Save to PDF
                 doc.SaveToFile(saveFileDialog10.FileName);
             }
