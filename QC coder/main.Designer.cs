@@ -38,9 +38,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.button4 = new System.Windows.Forms.Button();
-            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXPORTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dBarcodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,12 +49,27 @@
             this.exportToBMPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToTIFFToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cLOSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.button4 = new System.Windows.Forms.Button();
+            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             this.saveFileDialog3 = new System.Windows.Forms.SaveFileDialog();
             this.saveFileDialog4 = new System.Windows.Forms.SaveFileDialog();
             this.saveFileDialog5 = new System.Windows.Forms.SaveFileDialog();
             this.saveFileDialog6 = new System.Windows.Forms.SaveFileDialog();
             this.saveFileDialog7 = new System.Windows.Forms.SaveFileDialog();
             this.saveFileDialog8 = new System.Windows.Forms.SaveFileDialog();
+            this.button5 = new System.Windows.Forms.Button();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.button7 = new System.Windows.Forms.Button();
+            this.printPreviewDialog2 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument2 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog2 = new System.Windows.Forms.PrintDialog();
+            this.button6 = new System.Windows.Forms.Button();
+            this.saveFileDialog9 = new System.Windows.Forms.SaveFileDialog();
+            this.button8 = new System.Windows.Forms.Button();
+            this.saveFileDialog10 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -159,17 +171,6 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.button4.Location = new System.Drawing.Point(205, 410);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(227, 36);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "🖼️ EXPORT 2D QR CODE TO IMAGE 🖼️";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -185,7 +186,7 @@
             this.dBarcodeToolStripMenuItem,
             this.dQRCodeToolStripMenuItem});
             this.eXPORTToolStripMenuItem.Name = "eXPORTToolStripMenuItem";
-            this.eXPORTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eXPORTToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.eXPORTToolStripMenuItem.Text = "EXPORT";
             // 
             // dBarcodeToolStripMenuItem
@@ -195,27 +196,27 @@
             this.exportToBMPToolStripMenuItem,
             this.exportToTIFFToolStripMenuItem});
             this.dBarcodeToolStripMenuItem.Name = "dBarcodeToolStripMenuItem";
-            this.dBarcodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dBarcodeToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.dBarcodeToolStripMenuItem.Text = "1D barcode";
             // 
             // exportToPNGToolStripMenuItem
             // 
             this.exportToPNGToolStripMenuItem.Name = "exportToPNGToolStripMenuItem";
-            this.exportToPNGToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToPNGToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.exportToPNGToolStripMenuItem.Text = "Export to PNG";
             this.exportToPNGToolStripMenuItem.Click += new System.EventHandler(this.exportToPNGToolStripMenuItem_Click);
             // 
             // exportToBMPToolStripMenuItem
             // 
             this.exportToBMPToolStripMenuItem.Name = "exportToBMPToolStripMenuItem";
-            this.exportToBMPToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToBMPToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.exportToBMPToolStripMenuItem.Text = "Export to BMP";
             this.exportToBMPToolStripMenuItem.Click += new System.EventHandler(this.exportToBMPToolStripMenuItem_Click);
             // 
             // exportToTIFFToolStripMenuItem
             // 
             this.exportToTIFFToolStripMenuItem.Name = "exportToTIFFToolStripMenuItem";
-            this.exportToTIFFToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToTIFFToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.exportToTIFFToolStripMenuItem.Text = "Export to TIFF";
             this.exportToTIFFToolStripMenuItem.Click += new System.EventHandler(this.exportToTIFFToolStripMenuItem_Click);
             // 
@@ -226,43 +227,130 @@
             this.exportToBMPToolStripMenuItem1,
             this.exportToTIFFToolStripMenuItem1});
             this.dQRCodeToolStripMenuItem.Name = "dQRCodeToolStripMenuItem";
-            this.dQRCodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dQRCodeToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.dQRCodeToolStripMenuItem.Text = "2D QR code";
             // 
             // exportToPNGToolStripMenuItem1
             // 
             this.exportToPNGToolStripMenuItem1.Name = "exportToPNGToolStripMenuItem1";
-            this.exportToPNGToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exportToPNGToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.exportToPNGToolStripMenuItem1.Text = "Export to PNG";
             this.exportToPNGToolStripMenuItem1.Click += new System.EventHandler(this.exportToPNGToolStripMenuItem1_Click);
             // 
             // exportToBMPToolStripMenuItem1
             // 
             this.exportToBMPToolStripMenuItem1.Name = "exportToBMPToolStripMenuItem1";
-            this.exportToBMPToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exportToBMPToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.exportToBMPToolStripMenuItem1.Text = "Export to BMP";
             this.exportToBMPToolStripMenuItem1.Click += new System.EventHandler(this.exportToBMPToolStripMenuItem1_Click);
             // 
             // exportToTIFFToolStripMenuItem1
             // 
             this.exportToTIFFToolStripMenuItem1.Name = "exportToTIFFToolStripMenuItem1";
-            this.exportToTIFFToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exportToTIFFToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.exportToTIFFToolStripMenuItem1.Text = "Export to TIFF";
             this.exportToTIFFToolStripMenuItem1.Click += new System.EventHandler(this.exportToTIFFToolStripMenuItem1_Click);
             // 
             // cLOSEToolStripMenuItem
             // 
             this.cLOSEToolStripMenuItem.Name = "cLOSEToolStripMenuItem";
-            this.cLOSEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cLOSEToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.cLOSEToolStripMenuItem.Text = "CLOSE";
             this.cLOSEToolStripMenuItem.Click += new System.EventHandler(this.cLOSEToolStripMenuItem_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.button4.Location = new System.Drawing.Point(205, 410);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(227, 36);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "🖼️ EXPORT 2D QR CODE TO IMAGE 🖼️";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.RosyBrown;
+            this.button5.Location = new System.Drawing.Point(438, 410);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(163, 36);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "🖨️ Print 1D Bracode 🖨️";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Gold;
+            this.button7.Location = new System.Drawing.Point(607, 410);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(181, 36);
+            this.button7.TabIndex = 14;
+            this.button7.Text = "🖨️ Print 2D QR code 🖨️";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // printPreviewDialog2
+            // 
+            this.printPreviewDialog2.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog2.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog2.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog2.Enabled = true;
+            this.printPreviewDialog2.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog2.Icon")));
+            this.printPreviewDialog2.Name = "printPreviewDialog1";
+            this.printPreviewDialog2.Visible = false;
+            // 
+            // printDialog2
+            // 
+            this.printDialog2.UseEXDialog = true;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Tomato;
+            this.button6.Location = new System.Drawing.Point(205, 453);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(208, 33);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "📄 1D Barcode to PDF 📄";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.MistyRose;
+            this.button8.Location = new System.Drawing.Point(419, 453);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(208, 33);
+            this.button8.TabIndex = 16;
+            this.button8.Text = "📄 2D QR code to PDF 📄";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 472);
+            this.ClientSize = new System.Drawing.Size(800, 489);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -320,5 +408,17 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog6;
         private System.Windows.Forms.SaveFileDialog saveFileDialog7;
         private System.Windows.Forms.SaveFileDialog saveFileDialog8;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog2;
+        private System.Drawing.Printing.PrintDocument printDocument2;
+        private System.Windows.Forms.PrintDialog printDialog2;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog10;
     }
 }

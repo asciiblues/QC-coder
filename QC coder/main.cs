@@ -1,11 +1,14 @@
 ﻿using Microsoft.Win32;
 using QRCoder;
+using Spire.Pdf.Graphics;
+using Spire.Pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,22 +36,33 @@ namespace QC_coder
 
         private void main_Load(object sender, EventArgs e)
         {
+            button5.Hide();
             button3.Hide();
+            button4.Hide();
+            button5.Hide();
+            button7.Hide();
+            button6.Hide();button8.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            button5.Show();
             Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
             pictureBox2.Image = barcode.Draw(richTextBox1.Text, 20);
             button3.Show();
-       }
+            button5.Show();
+            button6.Show();
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(richTextBox1.Text, QRCodeGenerator.ECCLevel.H);
             QRCode qrCode = new QRCode(qrCodeData);
-            pictureBox1.Image = qrCode.GetGraphic(20);
+            pictureBox1.Image = qrCode.GetGraphic(5);
+            button4.Show();
+            button7.Show();
+            button8.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -57,12 +71,13 @@ namespace QC_coder
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureBox2.Image.Save(saveFileDialog1.FileName);
+                MessageBox.Show("File has saved to " + saveFileDialog1.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("You're not save the JPEG image", "Image not svaed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            MessageBox.Show("File has saved to " + saveFileDialog2.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -90,13 +105,13 @@ namespace QC_coder
             saveFileDialog2.Filter = ("JPEG image |*.jpeg");
             if (saveFileDialog2.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image.Save(saveFileDialog1.FileName);
+             pictureBox1.Image.Save(saveFileDialog1.FileName);
+                MessageBox.Show("File has saved to " + saveFileDialog2.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("You're not save the JPEG image", "Image not svaed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            MessageBox.Show("File has saved to " + saveFileDialog2.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void cLOSEToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,12 +125,13 @@ namespace QC_coder
             if (saveFileDialog3.ShowDialog() == DialogResult.OK)
             {
                 pictureBox2.Image.Save(saveFileDialog1.FileName);
+                MessageBox.Show("File has saved to " + saveFileDialog3.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("You're not save the PNG image", "Image not svaed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            MessageBox.Show("File has saved to " + saveFileDialog3.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
         }
 
         private void exportToBMPToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,12 +141,13 @@ namespace QC_coder
             if (saveFileDialog4.ShowDialog() == DialogResult.OK)
             {
                 pictureBox2.Image.Save(saveFileDialog1.FileName);
+                MessageBox.Show("File has saved to " + saveFileDialog4.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("You're not save the BMP image", "Image not svaed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            MessageBox.Show("File has saved to " + saveFileDialog4.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
         }
 
         private void exportToTIFFToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,12 +156,13 @@ namespace QC_coder
             if (saveFileDialog5.ShowDialog() == DialogResult.OK)
             {
                 pictureBox2.Image.Save(saveFileDialog1.FileName);
+                MessageBox.Show("File has saved to " + saveFileDialog5.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("You're not save the TIFF image", "Image not svaed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            MessageBox.Show("File has saved to " + saveFileDialog5.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          
         }
 
         private void exportToPNGToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -153,12 +171,13 @@ namespace QC_coder
             if (saveFileDialog6.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Image.Save(saveFileDialog1.FileName);
+                MessageBox.Show("File has saved to " + saveFileDialog6.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("You're not save the PNG image", "Image not svaed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            MessageBox.Show("File has saved to " + saveFileDialog6.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
         }
 
         private void exportToBMPToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -167,12 +186,13 @@ namespace QC_coder
             if (saveFileDialog7.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Image.Save(saveFileDialog1.FileName);
+                MessageBox.Show("File has saved to " + saveFileDialog7.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("You're not save the BMP image", "Image not svaed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            MessageBox.Show("File has saved to " + saveFileDialog7.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
         }
 
         private void exportToTIFFToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -181,12 +201,158 @@ namespace QC_coder
             if (saveFileDialog8.ShowDialog() == DialogResult.OK)
             {
                 pictureBox1.Image.Save(saveFileDialog1.FileName);
+                MessageBox.Show("File has saved to " + saveFileDialog8.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("You're not save the TIFF image", "Image not svaed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            MessageBox.Show("File has saved to " + saveFileDialog8.FileName, "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            printDocument1.PrintPage += PRIPAG1;
+            printDialog1.Document = printDocument1;
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print(); 
+            }
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
+        }
+        private void PRIPAG1(object sender, PrintPageEventArgs e)
+        {
+            Bitmap bitmap = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+            pictureBox2.DrawToBitmap(bitmap, new Rectangle(0,0,pictureBox2.Width, pictureBox2.Height));
+            e.Graphics.DrawImage(bitmap, 0, 0);
+            bitmap.Dispose();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            printDocument2.PrintPage += PRIPAG2;
+            printDialog2.Document = printDocument1;
+            if (printDialog2.ShowDialog() == DialogResult.OK)
+            {
+                printDocument2.Print();
+            }
+            printPreviewDialog2.Document = printDocument2;
+            printPreviewDialog2.ShowDialog();
+        }
+
+        private void PRIPAG2(object sender, PrintPageEventArgs e)
+        {
+            Bitmap bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            pictureBox1.DrawToBitmap(bitmap, new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height));
+            e.Graphics.DrawImage(bitmap, 0, 0);
+            bitmap.Dispose();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Create a PdfDocument object
+            
+            PdfDocument doc = new PdfDocument();
+            //Set the margins
+            doc.PageSettings.SetMargins(15);
+              //Add a page
+            PdfPageBase page = doc.Pages.Add();
+            //Load an Image
+            Image image = pictureBox2.Image;
+            //Get the image width and height
+            float width = image.PhysicalDimension.Width;
+            float height = image.PhysicalDimension.Height;
+                 //Declare a PdfImage variable
+            PdfImage pdfImage;
+            //If the image width is larger than page width
+            
+            if (width > page.Canvas.ClientSize.Width)
+                
+            {
+                
+                //Resize the image to make it to fit to the page width
+
+           float widthFitRate = width / page.Canvas.ClientSize.Width;
+                
+                Size size = new Size((int)(width / widthFitRate), (int)(height / widthFitRate));
+                
+                Bitmap scaledImage = new Bitmap(image, size);
+                
+
+
+
+                 //Load the scaled image to the PdfImage object
+
+                pdfImage = PdfImage.FromImage(scaledImage);
+                
+            } else
+                
+            {     
+                //Load the original image to the PdfImage object
+                pdfImage = PdfImage.FromImage(image);
+            }
+            //Draw image at (0, 0)
+            page.Canvas.DrawImage(pdfImage, 0, 0, pdfImage.Width, pdfImage.Height);
+            //Save to file
+            saveFileDialog9.Filter = ("Pdf file |*.pdf");
+            saveFileDialog9.ShowDialog();
+            doc.SaveToFile(saveFileDialog9.FileName);
+
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //Create a PdfDocument object
+
+            PdfDocument doc = new PdfDocument();
+            //Set the margins
+            doc.PageSettings.SetMargins(15);
+            //Add a page
+            PdfPageBase page = doc.Pages.Add();
+            //Load an Image
+            Image image = pictureBox1.Image;
+            //Get the image width and height
+            float width = image.PhysicalDimension.Width;
+            float height = image.PhysicalDimension.Height;
+            //Declare a PdfImage variable
+            PdfImage pdfImage;
+            //If the image width is larger than page width
+
+            if (width > page.Canvas.ClientSize.Width)
+
+            {
+
+                //Resize the image to make it to fit to the page width
+
+                float widthFitRate = width / page.Canvas.ClientSize.Width;
+
+                Size size = new Size((int)(width / widthFitRate), (int)(height / widthFitRate));
+
+                Bitmap scaledImage = new Bitmap(image, size);
+
+
+
+
+                //Load the scaled image to the PdfImage object
+
+                pdfImage = PdfImage.FromImage(scaledImage);
+
+            }
+            else
+
+            {
+                //Load the original image to the PdfImage object
+                pdfImage = PdfImage.FromImage(image);
+            }
+            //Draw image at (0, 0)
+            page.Canvas.DrawImage(pdfImage, 0, 0, pdfImage.Width, pdfImage.Height);
+            //Save to file
+            saveFileDialog10.Filter = ("Pdf file |*.pdf");
+            saveFileDialog10.ShowDialog();
+            doc.SaveToFile(saveFileDialog10.FileName);
         }
     }
 }
+
