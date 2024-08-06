@@ -251,107 +251,116 @@ namespace QC_coder
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //Create a PdfDocument object
-            
-            PdfDocument doc = new PdfDocument();
-            //Set the margins
-            doc.PageSettings.SetMargins(15);
-              //Add a page
-            PdfPageBase page = doc.Pages.Add();
-            //Load an Image
-            Image image = pictureBox2.Image;
-            //Get the image width and height
-            float width = image.PhysicalDimension.Width;
-            float height = image.PhysicalDimension.Height;
-                 //Declare a PdfImage variable
-            PdfImage pdfImage;
-            //If the image width is larger than page width
-            
-            if (width > page.Canvas.ClientSize.Width)
-                
-            {
-                
-                //Resize the image to make it to fit to the page width
-
-           float widthFitRate = width / page.Canvas.ClientSize.Width;
-                
-                Size size = new Size((int)(width / widthFitRate), (int)(height / widthFitRate));
-                
-                Bitmap scaledImage = new Bitmap(image, size);
-                
-
-
-
-                 //Load the scaled image to the PdfImage object
-
-                pdfImage = PdfImage.FromImage(scaledImage);
-                
-            } else
-                
-            {     
-                //Load the original image to the PdfImage object
-                pdfImage = PdfImage.FromImage(image);
-            }
-            //Draw image at (0, 0)
-            page.Canvas.DrawImage(pdfImage, 0, 0, pdfImage.Width, pdfImage.Height);
-            //Save to file
             saveFileDialog9.Filter = ("Pdf file |*.pdf");
-            saveFileDialog9.ShowDialog();
-            doc.SaveToFile(saveFileDialog9.FileName);
+            if (saveFileDialog9.ShowDialog() == DialogResult.OK)
+            {
+                //Create a PdfDocument object
+
+                PdfDocument doc = new PdfDocument();
+                //Set the margins
+                doc.PageSettings.SetMargins(15);
+                //Add a page
+                PdfPageBase page = doc.Pages.Add();
+                //Load an Image
+                Image image = pictureBox2.Image;
+                //Get the image width and height
+                float width = image.PhysicalDimension.Width;
+                float height = image.PhysicalDimension.Height;
+                //Declare a PdfImage variable
+                PdfImage pdfImage;
+                //If the image width is larger than page width
+
+                if (width > page.Canvas.ClientSize.Width)
+
+                {
+
+                    //Resize the image to make it to fit to the page width
+
+                    float widthFitRate = width / page.Canvas.ClientSize.Width;
+
+                    Size size = new Size((int)(width / widthFitRate), (int)(height / widthFitRate));
+
+                    Bitmap scaledImage = new Bitmap(image, size);
+
+
+
+
+                    //Load the scaled image to the PdfImage object
+
+                    pdfImage = PdfImage.FromImage(scaledImage);
+
+                }
+                else
+
+                {
+                    //Load the original image to the PdfImage object
+                    pdfImage = PdfImage.FromImage(image);
+                }
+                //Draw image at (0, 0)
+                page.Canvas.DrawImage(pdfImage, 0, 0, pdfImage.Width, pdfImage.Height);
+                //Save to PDF
+                doc.SaveToFile(saveFileDialog9.FileName);
+            }
+            else { MessageBox.Show("File is not saved", "File not saved", MessageBoxButtons.OK, MessageBoxIcon.Information);  }
+          
+            
 
 
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            //Create a PdfDocument object
-
-            PdfDocument doc = new PdfDocument();
-            //Set the margins
-            doc.PageSettings.SetMargins(15);
-            //Add a page
-            PdfPageBase page = doc.Pages.Add();
-            //Load an Image
-            Image image = pictureBox1.Image;
-            //Get the image width and height
-            float width = image.PhysicalDimension.Width;
-            float height = image.PhysicalDimension.Height;
-            //Declare a PdfImage variable
-            PdfImage pdfImage;
-            //If the image width is larger than page width
-
-            if (width > page.Canvas.ClientSize.Width)
-
-            {
-
-                //Resize the image to make it to fit to the page width
-
-                float widthFitRate = width / page.Canvas.ClientSize.Width;
-
-                Size size = new Size((int)(width / widthFitRate), (int)(height / widthFitRate));
-
-                Bitmap scaledImage = new Bitmap(image, size);
-
-
-
-
-                //Load the scaled image to the PdfImage object
-
-                pdfImage = PdfImage.FromImage(scaledImage);
-
-            }
-            else
-
-            {
-                //Load the original image to the PdfImage object
-                pdfImage = PdfImage.FromImage(image);
-            }
-            //Draw image at (0, 0)
-            page.Canvas.DrawImage(pdfImage, 0, 0, pdfImage.Width, pdfImage.Height);
-            //Save to file
             saveFileDialog10.Filter = ("Pdf file |*.pdf");
-            saveFileDialog10.ShowDialog();
-            doc.SaveToFile(saveFileDialog10.FileName);
+            if (saveFileDialog10.ShowDialog() == DialogResult.OK)
+            {
+                //Create a PdfDocument object
+
+                PdfDocument doc = new PdfDocument();
+                //Set the margins
+                doc.PageSettings.SetMargins(15);
+                //Add a page
+                PdfPageBase page = doc.Pages.Add();
+                //Load an Image
+                Image image = pictureBox1.Image;
+                //Get the image width and height
+                float width = image.PhysicalDimension.Width;
+                float height = image.PhysicalDimension.Height;
+                //Declare a PdfImage variable
+                PdfImage pdfImage;
+                //If the image width is larger than page width
+
+                if (width > page.Canvas.ClientSize.Width)
+
+                {
+
+                    //Resize the image to make it to fit to the page width
+
+                    float widthFitRate = width / page.Canvas.ClientSize.Width;
+
+                    Size size = new Size((int)(width / widthFitRate), (int)(height / widthFitRate));
+
+                    Bitmap scaledImage = new Bitmap(image, size);
+
+
+
+
+                    //Load the scaled image to the PdfImage object
+
+                    pdfImage = PdfImage.FromImage(scaledImage);
+
+                }
+                else
+
+                {
+                    //Load the original image to the PdfImage object
+                    pdfImage = PdfImage.FromImage(image);
+                }
+                //Draw image at (0, 0)
+                page.Canvas.DrawImage(pdfImage, 0, 0, pdfImage.Width, pdfImage.Height);
+                //Save to PDF
+                doc.SaveToFile(saveFileDialog10.FileName);
+            }
+            else { MessageBox.Show("File is not saved", "File not saved", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
     }
 }
