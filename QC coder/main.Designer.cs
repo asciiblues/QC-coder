@@ -70,6 +70,7 @@
             this.saveFileDialog9 = new System.Windows.Forms.SaveFileDialog();
             this.button8 = new System.Windows.Forms.Button();
             this.saveFileDialog10 = new System.Windows.Forms.SaveFileDialog();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -341,12 +342,22 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(634, 453);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(154, 33);
+            this.button9.TabIndex = 17;
+            this.button9.Text = "Close";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 489);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
@@ -420,5 +431,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.SaveFileDialog saveFileDialog10;
+        private System.Windows.Forms.Button button9;
     }
 }
