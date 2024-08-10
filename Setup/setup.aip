@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="21.4" version="21.4" Modules="professional" RootPath="." Language="en" Id="{54C37057-B154-4D35-94ED-4EF61A788BEC}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;MsiDriverPackagesComponent;UserAccountsComponent;ScheduledTasksComponent;SqlConnectionComponent;AutorunComponent;FirewallExceptionComponent;GameUxComponent;MsiDirectEditorComponent;SharePointSlnComponent;SilverlightSlnComponent;MultipleInstancesComponent;SccmComponent;ActSyncAppComponent;CPLAppletComponent;FixupComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_APP_FILE" Value="[#QCcoder.exe]"/>
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_FrameBtnsColor" Value="powderblue" MultiBuildValue="DefaultBuild:pink" MsiKey="AI_FrameBtnsColor"/>
+    <ROW Property="AI_FrameColor" Value="powderblue" MultiBuildValue="DefaultBuild:lavender" MsiKey="AI_FrameColor"/>
+    <ROW Property="AI_IA_APPLICATION_ID" Value="66b34a635a89078177482136"/>
+    <ROW Property="AI_IA_ENABLE" Value="1"/>
+    <ROW Property="AI_ImagesColor" Value="powderblue" MultiBuildValue="DefaultBuild:lavender" MsiKey="AI_ImagesColor"/>
+    <ROW Property="AI_PREDEF_LCONDS_PROPS" Value="AI_DETECTED_ALL"/>
+    <ROW Property="AI_ThemeColor" Value="powderblue" MultiBuildValue="DefaultBuild:mirage" MsiKey="AI_ThemeColor"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="The barcode and QE code generator with many future [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="AppLogoIcon" Value="applogo.ico" MultiBuildValue="DefaultBuild:appicocopy.jpg" Type="1" MsiKey="AppLogoIcon"/>
+    <ROW Property="CTRLS" Value="2"/>
+    <ROW Property="Manufacturer" Value="NZZZA"/>
+    <ROW Property="ProductCode" Value="1033:{D0389835-7A1E-4BB7-926F-DC7315981BA0} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="QC coder"/>
+    <ROW Property="ProductVersion" Value="1.0.0" Options="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{A322EDBA-F863-4347-9F4B-6B9F19D76366}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT60Display" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="ProductCode_Dir" Directory_Parent="TempFolder" DefaultDir="{D0389~1|[|ProductCode]"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="Spring.742DA8B7_Dir" Directory_Parent="ProductCode_Dir" DefaultDir="SPRING~1.742|Spring.742DA8B7" DefaultDirLocId="-"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="TempFolder" Directory_Parent="TARGETDIR" DefaultDir="TEMPFO~1|TempFolder" IsPseudoRoot="1"/>
+    <ROW Directory="progress_Dir" Directory_Parent="Spring.742DA8B7_Dir" DefaultDir="progress" DefaultDirLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_ExePath" ComponentId="{8F9C5D65-CAD7-44DE-90E4-8D10591BF7C8}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="AI_IA_ENABLE" ComponentId="{638B1BDC-7A0C-4ED5-88BF-D5079E086D7F}" Directory_="APPDIR" Attributes="4" KeyPath="AI_IA_ENABLE" Options="1"/>
+    <ROW Component="APPDIR" ComponentId="{EDDAC6E7-8F46-4077-B325-26E4992C9CD3}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="Microsoft.mshtml.dll" ComponentId="{CA42F6AD-4D36-4FE2-B65E-9CD34C6526A6}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.mshtml.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{2280EDD0-8D49-4DF8-A2DB-087ADDF5CECE}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="QCcoder.exe" ComponentId="{369DFBAE-74CF-404A-BF96-43ACB21EF466}" Directory_="APPDIR" Attributes="0" KeyPath="QCcoder.exe"/>
+    <ROW Component="QCcoder.exe.config" ComponentId="{DE748FE9-5A31-4DCB-8D37-BA090503DE84}" Directory_="APPDIR" Attributes="0" KeyPath="QCcoder.exe.config" Type="0"/>
+    <ROW Component="QRCoder.dll" ComponentId="{54AA947A-608F-42BF-9147-602E298DA091}" Directory_="APPDIR" Attributes="0" KeyPath="QRCoder.dll"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{D81BB129-9142-42B9-8D96-1BF751E4B808}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="Spire.Pdf.dll" ComponentId="{9D90C073-589C-4BDA-9B46-019EDBA5541B}" Directory_="APPDIR" Attributes="0" KeyPath="Spire.Pdf.dll"/>
+    <ROW Component="Zen.Barcode.Core.dll" ComponentId="{8F972399-33FD-411A-BE40-2904A2FBDC2C}" Directory_="APPDIR" Attributes="0" KeyPath="Zen.Barcode.Core.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Microsoft.mshtml.dll" Component_="Microsoft.mshtml.dll" FileName="MICROS~1.DLL|Microsoft.mshtml.dll" Attributes="0" SourcePath="..\QC coder\bin\x86\Setup\Microsoft.mshtml.dll" SelfReg="false"/>
+    <ROW File="QCcoder.exe" Component_="QCcoder.exe" FileName="QCCODE~1.EXE|QC coder.exe" Attributes="0" SourcePath="..\QC coder\bin\x86\Setup\QC coder.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="QCcoder.exe.config" Component_="QCcoder.exe.config" FileName="QCCODE~1.CON|QC coder.exe.config" Attributes="0" SourcePath="..\QC coder\bin\x86\Setup\QC coder.exe.config" SelfReg="false"/>
+    <ROW File="QCcoder.pdb" Component_="QCcoder.exe" FileName="QCCODE~1.PDB|QC coder.pdb" Attributes="0" SourcePath="..\QC coder\bin\x86\Setup\QC coder.pdb" SelfReg="false"/>
+    <ROW File="QRCoder.dll" Component_="QRCoder.dll" FileName="QRCoder.dll" Attributes="0" SourcePath="..\QC coder\bin\x86\Setup\QRCoder.dll" SelfReg="false"/>
+    <ROW File="Spire.Pdf.dll" Component_="Spire.Pdf.dll" FileName="SPIREP~1.DLL|Spire.Pdf.dll" Attributes="0" SourcePath="..\QC coder\bin\x86\Setup\Spire.Pdf.dll" SelfReg="false"/>
+    <ROW File="Spire.Pdf.xml" Component_="QCcoder.exe.config" FileName="SPIREP~1.XML|Spire.Pdf.xml" Attributes="0" SourcePath="..\QC coder\bin\x86\Setup\Spire.Pdf.xml" SelfReg="false"/>
+    <ROW File="Zen.Barcode.Core.dll" Component_="Zen.Barcode.Core.dll" FileName="ZENBAR~1.DLL|Zen.Barcode.Core.dll" Attributes="0" SourcePath="..\QC coder\bin\x86\Setup\Zen.Barcode.Core.dll" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.custcomp.MsiEmbeddedUIComponent">
+    <ROW MsiEmbeddedUI="embeddeduiproxy" FileName="embeddeduiproxy.dll" Attributes="3" MessageFilter="201359327" Data="&lt;AI_HOME&gt;bin\x86\embeddeduiproxy.dll"/>
+    <ROW MsiEmbeddedUI="InstallerAnalytics" FileName="InstallerAnalytics.dll" Attributes="0" Data="&lt;AI_TEMPLATES&gt;PlaceHolder.dat"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AiPersistentPropComponent">
+    <ROW Property="AI_IA_ENABLE" Registry="AI_IA_ENABLE" HklmSearch="AI_IA_ENABLE" HkcuSearch="AI_IA_ENABLE_1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrapperUISequenceComponent">
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="249"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="251"/>
+    <ROW Action="AI_DetectSoftware" Sequence="151"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="Setup Files" Languages="en" InstallationType="2" CabsLocation="1" CompressCabs="false" UseLzma="true" LzmaMethod="2" LzmaCompressionLevel="3" PackageType="1" FilesInsideExe="true" ExeIconPath="..\QC coder\favicon.ico" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" ExtUI="true" UseLargeSchema="true" ExeName="QC coder setup"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;spring\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;spring\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;spring\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;spring\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="SetupTypeDlg.aip" Path="&lt;AI_THEMES&gt;spring\fragments\SetupTypeDlg.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="Themes.aip" Path="&lt;AI_FRAGS&gt;Themes.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;spring\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;spring\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;spring\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;spring\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_IA_ENABLE" Signature_="AI_IA_ENABLE"/>
+    <ROW Property="AI_IA_ENABLE" Signature_="AI_IA_ENABLE_1"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="InstallerAnalytics.dll" SourcePath="&lt;AI_CUSTACTS&gt;InstallerAnalytics.dll"/>
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="SoftwareDetector.dll" SourcePath="&lt;AI_CUSTACTS&gt;SoftwareDetector.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="appicocopy.jpg" SourcePath="..\QC coder\appico copy.jpg"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+    <ROW Name="tempFiles.dll" SourcePath="&lt;AI_CUSTACTS&gt;tempFiles.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="FatalError" Control_="Finish" Event="DoAction" Argument="AI_RemoveTempFiles" Condition="1" Ordering="102"/>
+    <ROW Dialog_="UserExit" Control_="Finish" Event="DoAction" Argument="AI_RemoveTempFiles" Condition="1" Ordering="101"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="TypicalButton" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="299"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="102"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="101"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="2"/>
+    <ROW Dialog_="SetupTypeDlg" Control_="CustomButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="SetupTypeDlg" Condition="AI_INSTALL AND InstallMode=InstallModeCustom" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="102"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="2"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="701"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="701"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="CancelDlg" Control_="Yes" Event="DoAction" Argument="AI_IaLogPkgExitUserAbort" Condition="VersionMsi &lt; &quot;4.05&quot; OR UILevel = 2 OR LIMITUI = 1 OR UPGRADINGPRODUCTCODE" Ordering="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ChooseTextStyles" Type="1" Source="aicustact.dll" Target="ChooseTextStyles"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER_1" Type="51" Source="AI_RemoveAllTempFiles" Target="[AI_TEMP_FILE_ROLLBACK_INFO]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DetectSoftware" Type="257" Source="SoftwareDetector.dll" Target="OnDetectSoftware"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_ExtractTempFiles" Type="1" Source="tempFiles.dll" Target="ExtractTempFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_IaLogCustomInfo" Type="65" Source="InstallerAnalytics.dll" Target="OnAnalyticsLogCustomInfo"/>
+    <ROW Action="AI_IaLogInstallData" Type="65" Source="InstallerAnalytics.dll" Target="OnAnalyticsLogInstallData"/>
+    <ROW Action="AI_IaLogMachineInfo" Type="321" Source="InstallerAnalytics.dll" Target="OnAnalyticsLogMachineInfo"/>
+    <ROW Action="AI_IaLogPkgExitFatalError" Type="65" Source="InstallerAnalytics.dll" Target="OnAnalyticsLogFatalError"/>
+    <ROW Action="AI_IaLogPkgExitFinish" Type="65" Source="InstallerAnalytics.dll" Target="OnAnalyticsLogFinish"/>
+    <ROW Action="AI_IaLogPkgExitUserAbort" Type="65" Source="InstallerAnalytics.dll" Target="OnAnalyticsLogUserAbort" WithoutSeq="true"/>
+    <ROW Action="AI_IaLogPkgStarted" Type="321" Source="InstallerAnalytics.dll" Target="OnAnalyticsLogStart"/>
+    <ROW Action="AI_IaToggle" Type="65" Source="InstallerAnalytics.dll" Target="OnAnalyticsToggle"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="LaunchApp"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_RemoveAllTempFiles" Type="1281" Source="tempFiles.dll" Target="RemoveAllTempFiles" AdditionalSeq="AI_DATA_SETTER_1"/>
+    <ROW Action="AI_RemoveTempFiles" Type="1" Source="tempFiles.dll" Target="RemoveTempFiles" WithoutSeq="true"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_RunFinishActions" Type="1" Source="aicustact.dll" Target="RunFinishActions" WithoutSeq="true"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="AI_IA_ENABLE"/>
+    <ROW Feature_="MainFeature" Component_="Microsoft.mshtml.dll"/>
+    <ROW Feature_="MainFeature" Component_="QCcoder.exe"/>
+    <ROW Feature_="MainFeature" Component_="QCcoder.exe.config"/>
+    <ROW Feature_="MainFeature" Component_="QRCoder.dll"/>
+    <ROW Feature_="MainFeature" Component_="Spire.Pdf.dll"/>
+    <ROW Feature_="MainFeature" Component_="Zen.Barcode.Core.dll"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_DETECT_MODERNWIN" Condition="(VersionNT &gt;= 603)" Sequence="57" MsiKey="AI_DETECT_MODERNWIN"/>
+    <ROW Action="AI_DETECT_WINTHEME" Condition="(VersionNT &gt;= 603)" Sequence="58" MsiKey="AI_DETECT_WINTHEME"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1503"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1397"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="56"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="55"/>
+    <ROW Action="AI_IaToggle" Sequence="103"/>
+    <ROW Action="AI_IaLogPkgStarted" Condition="VersionMsi &lt; &quot;4.05&quot; OR UILevel = 2 OR LIMITUI = 1 OR UPGRADINGPRODUCTCODE" Sequence="54"/>
+    <ROW Action="AI_IaLogPkgExitFinish" Condition="VersionMsi &lt; &quot;4.05&quot; OR UILevel = 2 OR LIMITUI = 1 OR UPGRADINGPRODUCTCODE" Sequence="-1"/>
+    <ROW Action="AI_IaLogPkgExitFatalError" Condition="VersionMsi &lt; &quot;4.05&quot; OR UILevel = 2 OR LIMITUI = 1 OR UPGRADINGPRODUCTCODE" Sequence="-3"/>
+    <ROW Action="AI_IaLogPkgExitUserAbort" Condition="VersionMsi &lt; &quot;4.05&quot; OR UILevel = 2 OR LIMITUI = 1 OR UPGRADINGPRODUCTCODE" Sequence="-2"/>
+    <ROW Action="AI_IaLogInstallData" Sequence="1402"/>
+    <ROW Action="AI_IaLogMachineInfo" Sequence="399"/>
+    <ROW Action="AI_IaLogCustomInfo" Sequence="1401"/>
+    <ROW Action="AI_DetectSoftware" Sequence="102"/>
+    <ROW Action="AI_ExtractTempFiles" Sequence="1001"/>
+    <ROW Action="AI_RemoveTempFiles" Sequence="6601"/>
+    <ROW Action="AI_RemoveAllTempFiles" Sequence="1502"/>
+    <ROW Action="AI_DATA_SETTER_1" Sequence="1501"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="1399" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="1398"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="54"/>
+    <ROW Action="AI_DpiContentScale" Sequence="53"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="52"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="98"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102"/>
+    <ROW Action="AI_IaToggle" Sequence="99"/>
+    <ROW Action="AI_IaLogPkgStarted" Condition="VersionMsi &lt; &quot;4.05&quot; OR UILevel = 2 OR LIMITUI = 1 OR UPGRADINGPRODUCTCODE" Sequence="51"/>
+    <ROW Action="AI_IaLogMachineInfo" Sequence="399"/>
+    <ROW Action="AI_DetectSoftware" Sequence="101"/>
+    <ROW Action="AI_ExtractTempFiles" Sequence="1001"/>
+    <ROW Action="AI_ChooseTextStyles" Sequence="74"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 600)" Description="[ProductName] cannot be installed on [WindowsTypeNT60Display]." DescriptionLocId="AI.LaunchCondition.NoNT60" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="SETUPEXEDIR OR (REMOVE=&quot;ALL&quot;)" Description="This package can only be run from a bootstrapper." DescriptionLocId="AI.LaunchCondition.RequireBootstrapper" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_IA_ENABLE" Root="2" Key="Software\[Manufacturer]\[ProductCode]" Name="AI_IA_ENABLE" Type="2"/>
+    <ROW Signature_="AI_IA_ENABLE_1" Root="1" Key="Software\[Manufacturer]\[ProductCode]" Name="AI_IA_ENABLE" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="AI_IA_ENABLE" Root="-1" Key="Software\[Manufacturer]\[ProductCode]" Name="AI_IA_ENABLE" Value="[AI_IA_ENABLE]" Component_="AI_IA_ENABLE"/>
+    <ROW Registry="AdvancedInstaller" Root="-1" Key="Software\Caphyon\Advanced Installer" Name="\"/>
+    <ROW Registry="Caphyon" Root="-1" Key="Software\Caphyon" Name="\"/>
+    <ROW Registry="LZMA" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA" Name="\"/>
+    <ROW Registry="Manufacturer" Root="-1" Key="Software\[Manufacturer]" Name="\"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="ProductCode" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]" Name="\"/>
+    <ROW Registry="ProductCode_1" Root="-1" Key="Software\[Manufacturer]\[ProductCode]" Name="\"/>
+    <ROW Registry="ProductName" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="\"/>
+    <ROW Registry="ProductVersion" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="\"/>
+    <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="QCcoder.exe" Directory_="SHORTCUTDIR" Name="QCCODE~1|QC coder" Component_="QCcoder.exe" Target="[#QCcoder.exe]" Description="QC coder. The barcode and QR code generator with many future" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="QCcoder.exe_1" Directory_="DesktopFolder" Name="QCCODE~1|QC coder" Component_="QCcoder.exe" Target="[#QCcoder.exe]" Description="QC coder. The barcode and QR code generator with many future" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="spring"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>

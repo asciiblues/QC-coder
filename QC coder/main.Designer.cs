@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.QRP = new System.Windows.Forms.PictureBox();
+            this.BRP = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -61,9 +61,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.button7 = new System.Windows.Forms.Button();
-            this.printPreviewDialog2 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.printDialog2 = new System.Windows.Forms.PrintDialog();
             this.button6 = new System.Windows.Forms.Button();
@@ -71,8 +69,10 @@
             this.button8 = new System.Windows.Forms.Button();
             this.saveFileDialog10 = new System.Windows.Forms.SaveFileDialog();
             this.button9 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewShourtcutKeysBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.QRP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BRP)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(776, 217);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBox1_KeyDown);
             // 
             // label1
             // 
@@ -95,28 +95,28 @@
             this.label1.Text = "Enter text here :";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pictureBox1
+            // QRP
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 282);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 177);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.QRP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.QRP.Location = new System.Drawing.Point(12, 282);
+            this.QRP.Name = "QRP";
+            this.QRP.Size = new System.Drawing.Size(187, 177);
+            this.QRP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.QRP.TabIndex = 4;
+            this.QRP.TabStop = false;
+            this.QRP.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pictureBox2
+            // BRP
             // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox2.Location = new System.Drawing.Point(205, 282);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(583, 80);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.BRP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BRP.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BRP.Location = new System.Drawing.Point(205, 282);
+            this.BRP.Name = "BRP";
+            this.BRP.Size = new System.Drawing.Size(583, 80);
+            this.BRP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.BRP.TabIndex = 5;
+            this.BRP.TabStop = false;
+            this.BRP.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label2
             // 
@@ -164,7 +164,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -187,7 +188,7 @@
             this.dBarcodeToolStripMenuItem,
             this.dQRCodeToolStripMenuItem});
             this.eXPORTToolStripMenuItem.Name = "eXPORTToolStripMenuItem";
-            this.eXPORTToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.eXPORTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.eXPORTToolStripMenuItem.Text = "EXPORT";
             // 
             // dBarcodeToolStripMenuItem
@@ -255,7 +256,7 @@
             // cLOSEToolStripMenuItem
             // 
             this.cLOSEToolStripMenuItem.Name = "cLOSEToolStripMenuItem";
-            this.cLOSEToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.cLOSEToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cLOSEToolStripMenuItem.Text = "CLOSE";
             this.cLOSEToolStripMenuItem.Click += new System.EventHandler(this.cLOSEToolStripMenuItem_Click);
             // 
@@ -285,16 +286,6 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Gold;
@@ -305,16 +296,6 @@
             this.button7.Text = "🖨️ Print 2D QR code 🖨️";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // printPreviewDialog2
-            // 
-            this.printPreviewDialog2.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog2.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog2.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog2.Enabled = true;
-            this.printPreviewDialog2.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog2.Icon")));
-            this.printPreviewDialog2.Name = "printPreviewDialog1";
-            this.printPreviewDialog2.Visible = false;
             // 
             // printDialog2
             // 
@@ -350,9 +331,26 @@
             this.button9.TabIndex = 17;
             this.button9.Text = "Close";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewShourtcutKeysBookToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // viewShourtcutKeysBookToolStripMenuItem
+            // 
+            this.viewShourtcutKeysBookToolStripMenuItem.Name = "viewShourtcutKeysBookToolStripMenuItem";
+            this.viewShourtcutKeysBookToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.viewShourtcutKeysBookToolStripMenuItem.Text = "View shortcut keys book";
+            this.viewShourtcutKeysBookToolStripMenuItem.Click += new System.EventHandler(this.viewShourtcutKeysBookToolStripMenuItem_Click);
             // 
             // main
             // 
+            this.AccessibleDescription = "k";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -367,8 +365,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.BRP);
+            this.Controls.Add(this.QRP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
@@ -380,8 +378,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QC coder project";
             this.Load += new System.EventHandler(this.main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.main_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.QRP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BRP)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -395,8 +394,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        public System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.PictureBox QRP;
+        public System.Windows.Forms.PictureBox BRP;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
@@ -422,9 +421,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog2;
         private System.Drawing.Printing.PrintDocument printDocument2;
         private System.Windows.Forms.PrintDialog printDialog2;
         private System.Windows.Forms.Button button6;
@@ -432,5 +429,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.SaveFileDialog saveFileDialog10;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewShourtcutKeysBookToolStripMenuItem;
     }
 }
